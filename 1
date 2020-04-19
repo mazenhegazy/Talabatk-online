@@ -1,0 +1,1407 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
+package android.app;
+
+import android.app.ActivityManager.TaskDescription;
+import android.app.assist.AssistContent;
+import android.content.ComponentCallbacks2;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentSender;
+import android.content.SharedPreferences;
+import android.content.IntentSender.SendIntentException;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Configuration;
+import android.content.res.Resources.Theme;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.media.session.MediaController;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.transition.Scene;
+import android.transition.TransitionManager;
+import android.util.AttributeSet;
+import android.view.ActionMode;
+import android.view.ContextMenu;
+import android.view.ContextThemeWrapper;
+import android.view.DragAndDropPermissions;
+import android.view.DragEvent;
+import android.view.KeyEvent;
+import android.view.KeyboardShortcutGroup;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.SearchEvent;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.LayoutInflater.Factory2;
+import android.view.View.OnCreateContextMenuListener;
+import android.view.ViewGroup.LayoutParams;
+import android.view.Window.Callback;
+import android.view.accessibility.AccessibilityEvent;
+import android.widget.Toolbar;
+import androidx.annotation.RecentlyNonNull;
+import androidx.annotation.RecentlyNullable;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.List;
+
+public class Activity extends ContextThemeWrapper implements Factory2, Callback, android.view.KeyEvent.Callback, OnCreateContextMenuListener, ComponentCallbacks2 {
+    public static final int DEFAULT_KEYS_DIALER = 1;
+    public static final int DEFAULT_KEYS_DISABLE = 0;
+    public static final int DEFAULT_KEYS_SEARCH_GLOBAL = 4;
+    public static final int DEFAULT_KEYS_SEARCH_LOCAL = 3;
+    public static final int DEFAULT_KEYS_SHORTCUT = 2;
+    protected static final int[] FOCUSED_STATE_SET = new int[0];
+    public static final int RESULT_CANCELED = 0;
+    public static final int RESULT_FIRST_USER = 1;
+    public static final int RESULT_OK = -1;
+
+    public Activity() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public Intent getIntent() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setIntent(Intent newIntent) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final Application getApplication() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final boolean isChild() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final Activity getParent() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public WindowManager getWindowManager() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public Window getWindow() {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public LoaderManager getLoaderManager() {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public View getCurrentFocus() {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void attachBaseContext(Context newBase) {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onCreate(@RecentlyNullable Bundle savedInstanceState) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onCreate(@RecentlyNullable Bundle savedInstanceState, @RecentlyNullable PersistableBundle persistentState) {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onPostCreate(@RecentlyNullable Bundle savedInstanceState) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onPostCreate(@RecentlyNullable Bundle savedInstanceState, @RecentlyNullable PersistableBundle persistentState) {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onStart() {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onRestart() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onStateNotSaved() {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onResume() {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onPostResume() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean isVoiceInteraction() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean isVoiceInteractionRoot() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public VoiceInteractor getVoiceInteractor() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean isLocalVoiceInteractionSupported() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startLocalVoiceInteraction(Bundle privateOptions) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onLocalVoiceInteractionStarted() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onLocalVoiceInteractionStopped() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void stopLocalVoiceInteraction() {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onNewIntent(Intent intent) {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onSaveInstanceState(Bundle outState) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onPause() {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onUserLeaveHint() {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public CharSequence onCreateDescription() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onProvideAssistData(Bundle data) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onProvideAssistContent(AssistContent outContent) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void requestShowKeyboardShortcuts() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void dismissKeyboardShortcutsHelper() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onProvideKeyboardShortcuts(List<KeyboardShortcutGroup> data, Menu menu, int deviceId) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean showAssist(Bundle args) {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onStop() {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onDestroy() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void reportFullyDrawn() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onMultiWindowModeChanged(boolean isInMultiWindowMode, Configuration newConfig) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public void onMultiWindowModeChanged(boolean isInMultiWindowMode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean isInMultiWindowMode() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode, Configuration newConfig) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public void onPictureInPictureModeChanged(boolean isInPictureInPictureMode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean isInPictureInPictureMode() {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public void enterPictureInPictureMode() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean enterPictureInPictureMode(@RecentlyNonNull PictureInPictureParams params) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setPictureInPictureParams(@RecentlyNonNull PictureInPictureParams params) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public int getMaxNumPictureInPictureActions() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onConfigurationChanged(Configuration newConfig) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public int getChangingConfigurations() {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public Object getLastNonConfigurationInstance() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public Object onRetainNonConfigurationInstance() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onLowMemory() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onTrimMemory(int level) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public FragmentManager getFragmentManager() {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public void onAttachFragment(Fragment fragment) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public final Cursor managedQuery(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public void startManagingCursor(Cursor c) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public void stopManagingCursor(Cursor c) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public <T extends View> T findViewById(int id) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNonNull
+    public final <T extends View> T requireViewById(int id) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public ActionBar getActionBar() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setActionBar(@RecentlyNullable Toolbar toolbar) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setContentView(int layoutResID) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setContentView(View view) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setContentView(View view, LayoutParams params) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void addContentView(View view, LayoutParams params) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public TransitionManager getContentTransitionManager() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setContentTransitionManager(TransitionManager tm) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public Scene getContentScene() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setFinishOnTouchOutside(boolean finish) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void setDefaultKeyMode(int mode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onKeyLongPress(int keyCode, KeyEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onBackPressed() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onKeyShortcut(int keyCode, KeyEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onTouchEvent(MotionEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onTrackballEvent(MotionEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onGenericMotionEvent(MotionEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onUserInteraction() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onWindowAttributesChanged(android.view.WindowManager.LayoutParams params) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onContentChanged() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onWindowFocusChanged(boolean hasFocus) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onAttachedToWindow() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onDetachedFromWindow() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean hasWindowFocus() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean dispatchKeyShortcutEvent(KeyEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean dispatchTrackballEvent(MotionEvent ev) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean dispatchGenericMotionEvent(MotionEvent ev) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public View onCreatePanelView(int featureId) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onCreatePanelMenu(int featureId, Menu menu) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onPreparePanel(int featureId, View view, Menu menu) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onMenuOpened(int featureId, Menu menu) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onPanelClosed(int featureId, Menu menu) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void invalidateOptionsMenu() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onNavigateUp() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onNavigateUpFromChild(Activity child) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onCreateNavigateUpTaskStack(TaskStackBuilder builder) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onPrepareNavigateUpTaskStack(TaskStackBuilder builder) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onOptionsMenuClosed(Menu menu) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void openOptionsMenu() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void closeOptionsMenu() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void registerForContextMenu(View view) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void unregisterForContextMenu(View view) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void openContextMenu(View view) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void closeContextMenu() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onContextItemSelected(MenuItem item) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onContextMenuClosed(Menu menu) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    protected Dialog onCreateDialog(int id) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    @RecentlyNullable
+    protected Dialog onCreateDialog(int id, Bundle args) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    protected void onPrepareDialog(int id, Dialog dialog) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    protected void onPrepareDialog(int id, Dialog dialog, Bundle args) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public final void showDialog(int id) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public final boolean showDialog(int id, Bundle args) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public final void dismissDialog(int id) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public final void removeDialog(int id) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onSearchRequested(@RecentlyNullable SearchEvent searchEvent) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean onSearchRequested() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final SearchEvent getSearchEvent() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startSearch(@RecentlyNullable String initialQuery, boolean selectInitialQuery, @RecentlyNullable Bundle appSearchData, boolean globalSearch) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void triggerSearch(String query, @RecentlyNullable Bundle appSearchData) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void takeKeyEvents(boolean get) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final boolean requestWindowFeature(int featureId) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void setFeatureDrawableResource(int featureId, int resId) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void setFeatureDrawableUri(int featureId, Uri uri) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void setFeatureDrawable(int featureId, Drawable drawable) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void setFeatureDrawableAlpha(int featureId, int alpha) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNonNull
+    public LayoutInflater getLayoutInflater() {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNonNull
+    public MenuInflater getMenuInflater() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setTheme(int resid) {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onApplyThemeResource(Theme theme, int resid, boolean first) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void requestPermissions(@RecentlyNonNull String[] permissions, int requestCode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onRequestPermissionsResult(int requestCode, @RecentlyNonNull String[] permissions, @RecentlyNonNull int[] grantResults) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean shouldShowRequestPermissionRationale(@RecentlyNonNull String permission) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startActivityForResult(Intent intent, int requestCode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startActivityForResult(Intent intent, int requestCode, @RecentlyNullable Bundle options) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean isActivityTransitionRunning() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startIntentSenderForResult(IntentSender intent, int requestCode, @RecentlyNullable Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags) throws SendIntentException {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startIntentSenderForResult(IntentSender intent, int requestCode, @RecentlyNullable Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options) throws SendIntentException {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startActivity(Intent intent) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startActivity(Intent intent, @RecentlyNullable Bundle options) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startActivities(Intent[] intents) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startActivities(Intent[] intents, @RecentlyNullable Bundle options) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startIntentSender(IntentSender intent, @RecentlyNullable Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags) throws SendIntentException {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startIntentSender(IntentSender intent, @RecentlyNullable Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options) throws SendIntentException {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean startActivityIfNeeded(@RecentlyNonNull Intent intent, int requestCode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean startActivityIfNeeded(@RecentlyNonNull Intent intent, int requestCode, @RecentlyNullable Bundle options) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean startNextMatchingActivity(@RecentlyNonNull Intent intent) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean startNextMatchingActivity(@RecentlyNonNull Intent intent, @RecentlyNullable Bundle options) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startActivityFromChild(@RecentlyNonNull Activity child, Intent intent, int requestCode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startActivityFromChild(@RecentlyNonNull Activity child, Intent intent, int requestCode, @RecentlyNullable Bundle options) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public void startActivityFromFragment(@RecentlyNonNull Fragment fragment, Intent intent, int requestCode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public void startActivityFromFragment(@RecentlyNonNull Fragment fragment, Intent intent, int requestCode, @RecentlyNullable Bundle options) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startIntentSenderFromChild(Activity child, IntentSender intent, int requestCode, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags) throws SendIntentException {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startIntentSenderFromChild(Activity child, IntentSender intent, int requestCode, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, @RecentlyNullable Bundle options) throws SendIntentException {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void overridePendingTransition(int enterAnim, int exitAnim) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void setResult(int resultCode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void setResult(int resultCode, Intent data) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public Uri getReferrer() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public Uri onProvideReferrer() {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public String getCallingPackage() {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public ComponentName getCallingActivity() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setVisible(boolean visible) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean isFinishing() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean isDestroyed() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean isChangingConfigurations() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void recreate() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void finish() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void finishAffinity() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void finishFromChild(Activity child) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void finishAfterTransition() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void finishActivity(int requestCode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void finishActivityFromChild(@RecentlyNonNull Activity child, int requestCode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void finishAndRemoveTask() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean releaseInstance() {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onActivityReenter(int resultCode, Intent data) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public PendingIntent createPendingResult(int requestCode, @RecentlyNonNull Intent data, int flags) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setRequestedOrientation(int requestedOrientation) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public int getRequestedOrientation() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public int getTaskId() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean isTaskRoot() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean moveTaskToBack(boolean nonRoot) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNonNull
+    public String getLocalClassName() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public ComponentName getComponentName() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public SharedPreferences getPreferences(int mode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public Object getSystemService(@RecentlyNonNull String name) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setTitle(CharSequence title) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setTitle(int titleId) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public void setTitleColor(int textColor) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final CharSequence getTitle() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final int getTitleColor() {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onTitleChanged(CharSequence title, int color) {
+        throw new RuntimeException("Stub!");
+    }
+
+    protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setTaskDescription(TaskDescription taskDescription) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public final void setProgressBarVisibility(boolean visible) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public final void setProgressBarIndeterminateVisibility(boolean visible) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public final void setProgressBarIndeterminate(boolean indeterminate) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public final void setProgress(int progress) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public final void setSecondaryProgress(int secondaryProgress) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void setVolumeControlStream(int streamType) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final int getVolumeControlStream() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void setMediaController(MediaController controller) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final MediaController getMediaController() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public final void runOnUiThread(Runnable action) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public View onCreateView(String name, Context context, AttributeSet attrs) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean isImmersive() {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public boolean requestVisibleBehind(boolean visible) {
+        throw new RuntimeException("Stub!");
+    }
+
+    /** @deprecated */
+    @Deprecated
+    public void onVisibleBehindCanceled() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onEnterAnimationComplete() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setImmersive(boolean i) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setVrModeEnabled(boolean enabled, @RecentlyNonNull ComponentName requestedComponent) throws NameNotFoundException {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public ActionMode startActionMode(android.view.ActionMode.Callback callback) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public ActionMode startActionMode(android.view.ActionMode.Callback callback, int type) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public ActionMode onWindowStartingActionMode(android.view.ActionMode.Callback callback) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public ActionMode onWindowStartingActionMode(android.view.ActionMode.Callback callback, int type) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onActionModeStarted(ActionMode mode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void onActionModeFinished(ActionMode mode) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean shouldUpRecreateTask(Intent targetIntent) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean navigateUpTo(Intent upIntent) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public boolean navigateUpToFromChild(Activity child, Intent upIntent) {
+        throw new RuntimeException("Stub!");
+    }
+
+    @RecentlyNullable
+    public Intent getParentActivityIntent() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setEnterSharedElementCallback(SharedElementCallback callback) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setExitSharedElementCallback(SharedElementCallback callback) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void postponeEnterTransition() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startPostponedEnterTransition() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public DragAndDropPermissions requestDragAndDropPermissions(DragEvent event) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void startLockTask() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void stopLockTask() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void showLockTaskEscapeMessage() {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setShowWhenLocked(boolean showWhenLocked) {
+        throw new RuntimeException("Stub!");
+    }
+
+    public void setTurnScreenOn(boolean turnScreenOn) {
+        throw new RuntimeException("Stub!");
+    }
+}
+
+
+apply plugin: 'com.android.application'
+
+android {
+   useLibrary 'org.apache.http.legacy'
+   compileSdkVersion 28
+   
+   defaultConfig {
+      applicationId "com.my.newproject5"
+      minSdkVersion 21
+      targetSdkVersion 28
+      versionCode 1
+      versionName "1.0"
+   }
+   buildTypes {
+      release {
+         minifyEnabled false
+         proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      }
+   }
+}
+
+dependencies {
+   implementation 'com.google.android.gms:play-services-ads:19.0.1'
+   compile fileTree(dir: 'libs', include: ['*.jar'])
+   implementation 'com.github.bumptech.glide:glide:3.7.0'
+   implementation 'com.google.code.gson:gson:2.8.0'
+   implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+}
+
+
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+   repositories {
+      jcenter()
+      google()
+   }
+   dependencies {
+      classpath 'com.android.tools.build:gradle:3.6.2'
+      classpath 'com.google.gms:google-services:4.3.3'
+      // NOTE: Do not place your application dependencies here; they belong
+      // in the individual module build.gradle files
+   }
+}
+
+allprojects {
+   repositories {
+      jcenter()
+      //google()
+      maven{
+         url"http://maven.google.com"
+      }
+   }
+}
+
+
+
+
+<manifest
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   package="com.my.newproject5">
+   <application
+      android:allowBackup="true"
+      android:label="button"
+      android:icon="@drawable/app_icon"
+      android:largeHeap="true"
+      android:theme="@style/AppTheme">
+      <meta-data
+         android:name="com.google.android.gms.ads.APPLICATION_ID"
+         android:value="ca-app-pub-3477448104708828~4151963159"/>
+      <activity
+         android:name=".MainActivity"
+         android:configChanges="orientation|screenSize"
+         android:screenOrientation="portrait">
+         <intent-filter>
+            <action    android:name="android.intent.action.MAIN"/>
+            <category  android:name="android.intent.category.LAUNCHER"/>
+         </intent-filter>
+      </activity>
+      <uses-library
+         android:name="org.apache.http.legacy"
+         android:required="false"/>
+   </application>
+</manifest>
+
+
+
+package com.my.newproject5;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.SparseBooleanArray;
+import android.util.TypedValue;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Random;
+
+public abstract class MainActivity extends Activity implements RewardedVideoAdListener {
+   
+   private Button button1;
+   TextView mlog;
+   RewardedVideoAd mAd;
+   private Object RewardItem;
+
+   @Override
+   protected void onCreate(Bundle _savedInstanceState) {
+      super.onCreate(_savedInstanceState);
+      setContentView(R.layout.main);
+        MobileAds.initialize(this,"ca-app-pub-3477448104708828~4151963159");
+        mAd = MobileAds.getRewardedVideoAdInstance(this);
+        mAd.setRewardedVideoAdListener(this);
+        mAd.loadAd("ca-app-pub-3477448104708828/8829574765",new AdRequest.Builder().build());
+      initialize(_savedInstanceState);
+
+   }
+
+   private void initialize(Bundle _savedInstanceState) {
+      
+      button1 = (Button) findViewById(R.id.button1);
+      
+      button1.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View _view) {
+            button1.setEnabled(false);
+            if (mAd.isLoaded()) {
+               mAd.show();
+         }
+      });
+   }
+   private void initializeLogic() {
+   }
+   
+   @Override
+   protected void onActivityResult(int _requestCode, int _resultCode, Intent _data) {
+      super.onActivityResult(_requestCode, _resultCode, _data);
+      
+      switch (_requestCode) {
+         
+         default:
+         break;
+      }
+   }
+   
+   @Deprecated
+   public void showMessage(String _s) {
+      Toast.makeText(getApplicationContext(), _s, Toast.LENGTH_SHORT).show();
+   }
+   
+   @Deprecated
+   public int getLocationX(View _v) {
+      int _location[] = new int[2];
+      _v.getLocationInWindow(_location);
+      return _location[0];
+   }
+   
+   @Deprecated
+   public int getLocationY(View _v) {
+      int _location[] = new int[2];
+      _v.getLocationInWindow(_location);
+      return _location[1];
+   }
+   
+   @Deprecated
+   public int getRandom(int _min, int _max) {
+      Random random = new Random();
+      return random.nextInt(_max - _min + 1) + _min;
+   }
+   
+   @Deprecated
+   public ArrayList<Double> getCheckedItemPositionsToArray(ListView _list) {
+      ArrayList<Double> _result = new ArrayList<Double>();
+      SparseBooleanArray _arr = _list.getCheckedItemPositions();
+      for (int _iIdx = 0; _iIdx < _arr.size(); _iIdx++) {
+         if (_arr.valueAt(_iIdx))
+         _result.add((double)_arr.keyAt(_iIdx));
+      }
+      return _result;
+   }
+   
+   @Deprecated
+   public float  getDip(int _input){
+      return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, _input, getResources().getDisplayMetrics());
+   }
+   
+   @Deprecated
+   public int getDisplayWidthPixels(){
+      return getResources().getDisplayMetrics().widthPixels;
+   }
+   
+   @Deprecated
+   public int getDisplayHeightPixels(){
+      return getResources().getDisplayMetrics().heightPixels;
+   }
+
+   @Override
+   public void onRewardedVideoAdLoaded() {
+      mlog.append("An ad has loaded.\n")
+      button1.setEnabled(true);
+   }
+
+   @Override
+   public void onRewardedVideoAdOpened() {
+      mlog.append("An ad has Opened.\n")
+   }
+
+   @Override
+   public void onRewardedVideoStarted() {
+      mlog.append("An ad has started.\n")
+   }
+
+   @Override
+   public void onRewardedVideoAdClosed() {
+      mlog.append("An ad has closed.\n")
+
+   }
+
+   @Override
+   public void onRewarded(RewardItem rewardItem) {
+         mlog.append(String.format(Locale.getDefault()"You received %d %s!\n",RewardItem.getAmount(),RewardItem.gettype());
+   }
+
+   @Override
+   public void onRewardedVideoAdLeftApplication() {
+      mlog.append("An ad has caused focus to leave.\n")
+   }
+
+   @Override
+   public void onRewardedVideoAdFailedToLoad(int i) {
+      mlog.append("An ad has loaded.\n")
+   }
+
+   @Override
+   public void onRewardedVideoCompleted() {
+      mlog.append("An ad has faild to loaded.\n")
+   }
+}
+
+
+
+}
